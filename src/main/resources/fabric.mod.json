@@ -1,30 +1,30 @@
 {
-	"schemaVersion": 1,
-	"id": "cgol",
-	"version": "1.0.0",
-	"name": "Conway's Game Of Life",
-	"description": "A Minecraft implementation of Conway's Game of Life, where blocks dynamically change between alive and dead states based on classic CGOL rules.",
-	"authors": [
-		"tema5002"
-	],
-	"contact": {
-		"homepage": "https://github.com/tema5002/cgol-mod",
-		"issues": "https://github.com/tema5002/cgol-mod/issues"
-	},
-	"license": "GPL-3.0",
-	"icon": "assets/cgol/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"io.github.tema5002.cgol.CGOLMod"
-		]
-	},
-	"mixins": [],
-	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": ">=1.21.5",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {}
+    "authors": [
+        "tema5002"
+    ],
+    "contact": {
+        "homepage": "https://github.com/tema5002/cgol-mod",
+        "issues": "https://github.com/tema5002/cgol-mod/issues"
+    },
+    "depends": {
+        "fabric-api": "*",
+        "fabricloader": ">=0.16.14",
+        "java": ">=21",
+        "minecraft": ">=1.21.5"
+    },
+    "description": "A Minecraft implementation of Conway's Game of Life, where blocks dynamically change between alive and dead states based on classic CGOL rules.",
+    "entrypoints": {
+        "main": [
+            "io.github.tema5002.cgol.CGOLMod"
+        ]
+    },
+    "environment": "*",
+    "icon": "assets/cgol/icon.png",
+    "id": "cgol",
+    "license": "GPL-3.0",
+    "mixins": [],
+    "name": "Conway's Game Of Life",
+    "schemaVersion": 1,
+    "suggests": {},
+    "version": "1.0.0"
 }
