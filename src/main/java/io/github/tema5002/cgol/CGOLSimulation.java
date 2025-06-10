@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -12,39 +13,37 @@ import java.util.concurrent.Executors;
 
 public class CGOLSimulation {
     private static final BlockPos[] NEIGHBOR_OFFSETS = {
-            new BlockPos(-1, -1, -1),
-            new BlockPos(0, -1, -1),
-            new BlockPos(1, -1, -1),
-            new BlockPos(-1, 0, -1),
-            new BlockPos(0, 0, -1),
-            new BlockPos(1, 0, -1),
-            new BlockPos(-1, 1, -1),
-            new BlockPos(0, 1, -1),
-            new BlockPos(1, 1, -1),
-            new BlockPos(-1, -1, 0),
-            new BlockPos(0, -1, 0),
-            new BlockPos(1, -1, 0),
-            new BlockPos(-1, 0, 0),
-            new BlockPos(1, 0, 0),
-            new BlockPos(-1, 1, 0),
-            new BlockPos(0, 1, 0),
-            new BlockPos(1, 1, 0),
-            new BlockPos(-1, -1, 1),
-            new BlockPos(0, -1, 1),
-            new BlockPos(1, -1, 1),
-            new BlockPos(-1, 0, 1),
-            new BlockPos(0, 0, 1),
-            new BlockPos(1, 0, 1),
-            new BlockPos(-1, 1, 1),
-            new BlockPos(0, 1, 1),
-            new BlockPos(1, 1, 1)
+        new BlockPos(-1, -1, -1),
+        new BlockPos(0, -1, -1),
+        new BlockPos(1, -1, -1),
+        new BlockPos(-1, 0, -1),
+        new BlockPos(0, 0, -1),
+        new BlockPos(1, 0, -1),
+        new BlockPos(-1, 1, -1),
+        new BlockPos(0, 1, -1),
+        new BlockPos(1, 1, -1),
+        new BlockPos(-1, -1, 0),
+        new BlockPos(0, -1, 0),
+        new BlockPos(1, -1, 0),
+        new BlockPos(-1, 0, 0),
+        new BlockPos(1, 0, 0),
+        new BlockPos(-1, 1, 0),
+        new BlockPos(0, 1, 0),
+        new BlockPos(1, 1, 0),
+        new BlockPos(-1, -1, 1),
+        new BlockPos(0, -1, 1),
+        new BlockPos(1, -1, 1),
+        new BlockPos(-1, 0, 1),
+        new BlockPos(0, 0, 1),
+        new BlockPos(1, 0, 1),
+        new BlockPos(-1, 1, 1),
+        new BlockPos(0, 1, 1),
+        new BlockPos(1, 1, 1)
     };
 
     private static int tickCounter = 0;
 
-    private static final ExecutorService THREAD_POOL = Executors.newFixedThreadPool(
-        Math.max(2, Runtime.getRuntime().availableProcessors() - 1)
-    );
+    private static final ExecutorService THREAD_POOL = Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors() - 1));
 
     public static void tick(MinecraftServer server) {
         if (!server.getGameRules().getBoolean(CGOLMod.CGOL_ENABLED)) return;
@@ -58,11 +57,10 @@ public class CGOLSimulation {
             futures.add(CompletableFuture.runAsync(() -> processWorld(world), THREAD_POOL));
         }
 
-        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]))
-            .exceptionally(throwable -> {
-                throwable.printStackTrace();
-                return null;
-            }).join();
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).exceptionally(throwable -> {
+            throwable.printStackTrace();
+            return null;
+        }).join();
     }
 
     private static void processWorld(ServerWorld world) {
@@ -108,8 +106,7 @@ public class CGOLSimulation {
                 if (currentlyAlive != shouldBeAlive) {
                     world.setBlockState(pos, cellBlock.withAlive(shouldBeAlive));
                 }
-            }
-            else if (shouldBeAlive && (currentBlockState.isAir())) {
+            } else if (shouldBeAlive && (currentBlockState.isAir())) {
                 world.setBlockState(pos, CGOLMod.CELL_BLOCK.withAlive(true));
             }
         });

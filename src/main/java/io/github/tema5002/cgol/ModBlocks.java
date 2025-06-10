@@ -9,6 +9,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
+
 import java.util.function.Function;
 
 public class ModBlocks {
