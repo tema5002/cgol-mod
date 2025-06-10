@@ -1,0 +1,6 @@
+{
+    "model": {
+        "model": "cgol:block/cell_alive",
+        "type": "minecraft:model"
+    }
+}

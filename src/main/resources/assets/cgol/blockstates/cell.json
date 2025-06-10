@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "alive=false": {
+            "model": "cgol:block/cell_dead"
+        },
+        "alive=true": {
+            "model": "cgol:block/cell_alive"
+        }
+    }
+}

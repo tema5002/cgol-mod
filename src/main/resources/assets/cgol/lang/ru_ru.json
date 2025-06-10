@@ -1,0 +1,15 @@
+{
+    "cgol.status": "Статус CGOL: %s, Скорость: %d тиков",
+    "cgol.status.enabled": "Включено",
+    "cgol.status.disabled": "Выключено",
+    "cgol.speed.set": "Скорость CGOL установлена на %d тиков",
+    "cgol.simulation.status": "Симуляция игры Жизнь Конвея %s",
+    "cgol.simulation.enabled": "включена",
+    "cgol.simulation.disabled": "выключена",
+    "item.cgol.cell": "Клетка",
+    "itemGroup.cgol": "Игра Жизнь Конвея",
+    "gamerule.cgolEnabled": "Симуляция CGOL включена",
+    "gamerule.cgolEnabled.description": "Определяет, активна ли симуляция игры Жизнь Конвея.",
+    "gamerule.cgolSpeed": "Скорость симуляции CGOL",
+    "gamerule.cgolSpeed.description": "Определяет частоту обновления симуляции в тиках."
+}

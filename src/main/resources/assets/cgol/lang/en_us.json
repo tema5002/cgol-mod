@@ -1,0 +1,15 @@
+{
+    "cgol.status": "CGOL status: %s, Speed: %d ticks",
+    "cgol.status.enabled": "Enabled",
+    "cgol.status.disabled": "Disabled",
+    "cgol.speed.set": "CGOL speed set to %d ticks",
+    "cgol.simulation.status": "Conway's Game of Life simulation %s",
+    "cgol.simulation.enabled": "enabled",
+    "cgol.simulation.disabled": "disabled",
+    "item.cgol.cell": "Cell",
+    "itemGroup.cgol": "Conway's Game Of Life",
+    "gamerule.cgolEnabled": "CGOL Simulation enabled",
+    "gamerule.cgolEnabled.description": "Controls whether Conway's Game of Life simulation is active.",
+    "gamerule.cgolSpeed": "CGOL Simulation speed",
+    "gamerule.cgolSpeed.description": "Determines how frequently the simulation updates, measured in ticks."
+}
